@@ -3,17 +3,17 @@ module Strategy
   # contains a set of actions, which are the actual pieces of executable
   # code, as well as a high-level description of what the step accomplishes.
   class Step
-    attr_reader :name, :actions
+    attr_reader :description, :actions
 
     # Creates a new Step, which can later be added to a Plan.
     #
     # == Parameters:
-    # name::
-    #   The name of the step. This is a high-level description of what the
-    #   step is supposed to accomplish.
+    # description::
+    #   The description of the step. This is a high-level description of what
+    #   the step is supposed to accomplish.
     #
-    def initialize name
-      @name = name
+    def initialize description
+      @description = description
       @actions = []
     end
 

@@ -2,29 +2,29 @@ require 'spec_helper'
 
 describe 'Plan' do
   before :all do
-    @plan = Strategy::Plan.new 'Test Plan'
+    @plan = Strategy.plan 'Test Plan'
 
-    step = Strategy::Step.new 'Step 1'
+    step = Strategy.step 'Step 1'
     step.action { puts 1 }
     @plan.add step
 
-    step = Strategy::Step.new 'Step 2'
+    step = Strategy.step 'Step 2'
     step.action { puts 2 }
     @plan.add step
   end
 
   it 'should add a description to the plan' do
-    expect(@plan.name).to eq('Test Plan')
+    expect(@plan.description).to eq('Test Plan')
   end
 
   it 'should accept new steps' do
-    step = Strategy::Step.new 'Step 3'
+    step = Strategy.step 'Step 3'
     step.action { puts 3 }
     @plan.add step
     expect(@plan.steps.length).to eq(3)
   end
 
-  it 'should reflect the proper plan name' do
+  it 'should reflect the proper plan description' do
     expect(@plan.describe).to include('Test Plan')
   end
 

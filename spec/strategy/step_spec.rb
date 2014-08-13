@@ -2,11 +2,11 @@ require 'spec_helper'
 
 describe 'Step' do
   before :all do
-    @step = Strategy::Step.new 'Test Step'
+    @step = Strategy.step 'Test Step'
   end
 
-  it 'should create a new step with proper name' do
-    expect(@step.name).to eq('Test Step')
+  it 'should create a new step with proper description' do
+    expect(@step.description).to eq('Test Step')
   end
 
   it 'should add an action properly' do

@@ -10,24 +10,24 @@ Following is a basic example of how `strategy` can help you build CLI's.
 require 'strategy'
 
 # Create a new plan and give it a name.
-plan = Strategy::Plan.new "Hokey Pokey"
+plan = Strategy.plan "Hokey Pokey"
 
 # Create a new step and assign one action to it
-step = Strategy::Step.new "Put your right foot in"
+step = Strategy.step "Put your right foot in"
 step.action { puts "*puts right foot in*" }
 
 # Add the created step to the execution plan
 plan.add step
 
 # Add a second step to the plan
-step = Strategy::Step.new "Take your right foot out"
+step = Strategy.step "Take your right foot out"
 step.action { puts "*takes right foot out*" }
 plan.add step
 
 # Add a third step. This step contains multiple actions. Technically, since we
 # are dealing with ruby blocks, a single action could contain any amount of
 # ruby code. This step demonstrates that a step can be added to more than once.
-step = Strategy::Step.new "Put your right foot in and shake it all about"
+step = Strategy.step "Put your right foot in and shake it all about"
 step.action { puts "*puts right foot in*" }
 step.action { puts "*shakes it all about*" }
 plan.add step

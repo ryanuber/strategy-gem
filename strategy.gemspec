@@ -4,7 +4,7 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 Gem::Specification.new do |s|
   files           = Dir.glob('**/*').reject { |f| File.directory? f }
   s.name          = 'strategy'
-  s.version       = '0.1.1'
+  s.version       = '0.1.2'
   s.summary       = 'Create runnable, stepped execution plans'
   s.description   = 'Create runnable, stepped plans to control execution'
   s.authors       = 'Ryan Uber'

@@ -5,17 +5,17 @@ module Strategy
   # highest-level container around an execution strategy, and may contain as few
   # or as many Step objects as required.
   class Plan
-    attr_reader :name, :steps
+    attr_reader :description, :steps
 
     # Create a new plan, to which individual execution steps will be added.
     #
     # == Parameters:
-    # name::
-    #   The name of the execution plan. This is a short sentence which
+    # description::
+    #   The description of the execution plan. This is a short sentence which
     #   describes what the plan will do.
     #
-    def initialize name
-      @name = name
+    def initialize description
+      @description = description
       @steps = []
     end
 
@@ -41,7 +41,7 @@ module Strategy
       @steps.each do |step|
         n += 1
         if block_given?
-          yield n, step.name
+          yield n, step.description
         end
         step.execute!
       end
@@ -51,10 +51,10 @@ module Strategy
     # a textual representation of the execution plan which can be displayed to a
     # user before executing anything for confirmation.
     def describe
-      description = [@name]
+      description = [@description]
       n = 0
       @steps.each do |step|
-        description << "  #{n+=1}. #{step.name}"
+        description << "  #{n+=1}. #{step.description}"
       end
       description.join "\n"
     end
