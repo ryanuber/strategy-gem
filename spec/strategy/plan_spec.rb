@@ -28,6 +28,10 @@ describe 'Plan' do
     expect(@plan.describe).to include('Test Plan')
   end
 
+  it 'should error if a non-step object is passed' do
+    expect { @plan.add 0 }.to raise_error
+  end
+
   it 'should reflect all steps in the plan' do
     expect(@plan.describe).to include('Step 1')
     expect(@plan.describe).to include('Step 2')
