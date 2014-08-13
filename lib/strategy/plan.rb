@@ -5,7 +5,7 @@ module Strategy
   # highest-level container around an execution strategy, and may contain as few
   # or as many Step objects as required.
   class Plan
-    attr_reader :name
+    attr_reader :name, :steps
 
     # Create a new plan, to which individual execution steps will be added.
     #
