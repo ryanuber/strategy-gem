@@ -1,3 +1,5 @@
+# strategy (gem) [![Build Status](https://travis-ci.org/ryanuber/strategy-gem.svg)](https://travis-ci.org/ryanuber/strategy-gem)
+
 `strategy` is a ruby gem which helps you encapsulate entire workflows. It is
 intended to help with building CLI interfaces which perform complex, stepped
 workflows and visualize them before executing on them.
