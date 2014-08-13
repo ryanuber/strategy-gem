@@ -2,6 +2,8 @@
 intended to help with building CLI interfaces which perform complex, stepped
 workflows and visualize them before executing on them.
 
+Following is a basic example of how `strategy` can help you build CLI's.
+
 ```ruby
 require 'strategy'
 
@@ -45,4 +47,34 @@ gets
 # before the step is exeucted, the plan will yield the step number and the
 # description to allow printing execution markers and whatnot.
 plan.execute! { |num, desc| puts "\n==> Executing step #{num}: #{desc}" }
+```
+
+Output:
+
+```
+$ ruby test.rb
+Hokey Pokey
+  1. Put your right foot in
+  2. Take your right foot out
+  3. Put your right foot in and shake it all about
+
+<Enter> to execute
+
+*puts right foot in*
+*takes right foot out*
+*puts right foot in*
+*shakes it all about*
+
+<Enter> to execute
+
+
+==> Executing step 1: Put your right foot in
+*puts right foot in*
+
+==> Executing step 2: Take your right foot out
+*takes right foot out*
+
+==> Executing step 3: Put your right foot in and shake it all about
+*puts right foot in*
+*shakes it all about*
 ```
