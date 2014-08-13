@@ -26,7 +26,7 @@ module Strategy
     # step::
     #   A Strategy::Step object encapsulating some actions
     #
-    def add_step step
+    def add step
       if !step.kind_of? Step
         raise TypeError, "Expected Strategy::Step but got #{step.class}"
       end

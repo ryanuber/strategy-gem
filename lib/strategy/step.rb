@@ -19,7 +19,7 @@ module Strategy
 
     # Adds a new action to the step. Actions are given as a code block, and
     # will be executed in the order they are added (if the step is executed).
-    def add_action &block
+    def action &block
       @actions << block
     end
 
